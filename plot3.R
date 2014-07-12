@@ -15,9 +15,9 @@ data_original$Date <- as.Date(data_original$Date, format="%d/%m/%Y")
 ## Subset the data
 data <- subset(data_original, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
 
-## Converting dates
-datetime <- paste(as.Date(data$Date), data$Time)
-data$Datetime <- as.POSIXct(datetime)
+## Convert dates to suitable format
+datentime <- paste(as.Date(data$Date), data$Time)
+data$Datetime <- as.POSIXct(datentime)
 
 ## Plot 3
 with(data, {
